@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js" type="module" defer ></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form> <!-- apunta a donde usted va a llevar la informacion el (action="direccion deseada")--> 
+        <input type="number" required name="valor" placeholder="Ingrese monto"><br>
+        <input type="radio" name="caja"  value="ingreso"><label for="">Ingreso</label>
+        <input type="radio" name="caja"  value="egreso"><label for="">Egreso</label><br>
+        <input type="submit" value="calcular">
+
+    </form>
+    <table border="solid">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Valor</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody id="myData">
+        </tbody>
+    </table>
+</body>
+</html>
