@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js" type="module" defer ></script>
     <link rel="stylesheet" href="style.css">
+    <script src="./main.js" type="module" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <form> <!-- apunta a donde usted va a llevar la informacion el (action="direccion deseada")--> 
+    <h1>Control de Ingresos y Egresos</h1>
+    <form action="">
         <input type="number" required name="valor" placeholder="Ingrese monto"><br>
-        <input type="radio" name="caja"  value="ingreso"><label for="">Ingreso</label>
-        <input type="radio" name="caja"  value="egreso"><label for="">Egreso</label><br>
+        <input type="radio" name="caja" value="ingreso"><label for="ingreso">Ingreso</label>
+        <input type="radio" name="caja" value="egreso"><label for="egreso">Egreso</label><br><br>
         <input type="submit" value="calcular">
-
     </form>
+    <br>
     <table border="solid">
         <thead>
             <tr>
                 <th>#</th>
                 <th>Valor</th>
                 <th>Tipo</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody id="myData">
