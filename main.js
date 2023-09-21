@@ -1,6 +1,7 @@
 const myform = document.querySelector("form");
 const myTable = document.querySelector("#myData");
 
+
 async function mostrarDatos() {
     let res = await (await fetch("https://6509d0e4f6553137159c123e.mockapi.io/tabla")).json();
     console.log(res);
@@ -22,7 +23,6 @@ async function mostrarDatos() {
         myTable.appendChild(row);
     }
 }
-
 addEventListener("DOMContentLoaded", mostrarDatos);
 
 myTable.addEventListener("click", function (event) {
@@ -98,7 +98,6 @@ function editarRegistro(id, nuevoValor, nuevoTipo) {
         console.error("Error al comunicarse con el servidor:", error);
     });
 }
-
 myTable.addEventListener("click", function (event) {
     if (event.target.classList.contains("btn-editar")) {
         const idAEditar = event.target.getAttribute("data-id");
