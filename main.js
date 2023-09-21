@@ -73,13 +73,6 @@ myTable.addEventListener("submit", async(e) => {
     }
 })
 
-/* myform.addEventListener("submit", async (e) => {
-    ) */
-
-/* futuras acciones: 
-   - Buscar informacion dentro de la tabla 
-   - Modificar información de la tabla
-*/
 function editarRegistro(id, nuevoValor, nuevoTipo) {
     const data = {
         valor: nuevoValor,
@@ -96,7 +89,7 @@ function editarRegistro(id, nuevoValor, nuevoTipo) {
     .then((response) => {
         if (response.ok) {
             console.log("Registro actualizado con éxito.");
-            mostrarDatos(); // Actualizar la tabla después de la edición
+            mostrarDatos(); 
         } else {
             console.error("Error al actualizar el registro en el servidor.");
         }
@@ -109,9 +102,8 @@ function editarRegistro(id, nuevoValor, nuevoTipo) {
 myTable.addEventListener("click", function (event) {
     if (event.target.classList.contains("btn-editar")) {
         const idAEditar = event.target.getAttribute("data-id");
-        const nuevoValor = prompt("Nuevo valor:", ""); // Muestra un cuadro de diálogo para ingresar el nuevo valor
-        const nuevoTipo = prompt("Nuevo tipo (ingreso/egreso):", ""); // Muestra un cuadro de diálogo para ingresar el nuevo tipo
-
+        const nuevoValor = prompt("Nuevo valor:", ""); 
+        const nuevoTipo = prompt("Nuevo tipo (ingreso/egreso):", ""); 
         if (nuevoValor !== null && nuevoTipo !== null) {
             editarRegistro(idAEditar, nuevoValor, nuevoTipo);
         }
