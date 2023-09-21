@@ -15,6 +15,7 @@ async function mostrarDatos() {
             <td>${res[i].caja}</td>
             <td>
                 <button class="btn-eliminar" data-id="${res[i].id}">Eliminar</button>
+                <button class="btn-editar" data-id="${res[i].id}">Editar<b/button>
             </td>
         `;
 
@@ -61,7 +62,16 @@ myform.addEventListener("submit", async (e) => {
     window.location.reload();
 });
 
+myTable.addEventListener("submit", async(e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.target));
+    const { valor } = data;
+    data.valor = (typeof valor === "string") ? Number(valor) : null;
 
+    let config = {
+        metod
+    }
+})
 
 /* myform.addEventListener("submit", async (e) => {
     ) */
@@ -70,3 +80,40 @@ myform.addEventListener("submit", async (e) => {
    - Buscar informacion dentro de la tabla 
    - Modificar información de la tabla
 */
+function editarRegistro(id, nuevoValor, nuevoTipo) {
+    const data = {
+        valor: nuevoValor,
+        caja: nuevoTipo
+    };
+
+    fetch(`https://6509d0e4f6553137159c123e.mockapi.io/tabla/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .then((response) => {
+        if (response.ok) {
+            console.log("Registro actualizado con éxito.");
+            mostrarDatos(); // Actualizar la tabla después de la edición
+        } else {
+            console.error("Error al actualizar el registro en el servidor.");
+        }
+    })
+    .catch((error) => {
+        console.error("Error al comunicarse con el servidor:", error);
+    });
+}
+
+myTable.addEventListener("click", function (event) {
+    if (event.target.classList.contains("btn-editar")) {
+        const idAEditar = event.target.getAttribute("data-id");
+        const nuevoValor = prompt("Nuevo valor:", ""); // Muestra un cuadro de diálogo para ingresar el nuevo valor
+        const nuevoTipo = prompt("Nuevo tipo (ingreso/egreso):", ""); // Muestra un cuadro de diálogo para ingresar el nuevo tipo
+
+        if (nuevoValor !== null && nuevoTipo !== null) {
+            editarRegistro(idAEditar, nuevoValor, nuevoTipo);
+        }
+    }
+});
