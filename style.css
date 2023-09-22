@@ -26,6 +26,7 @@ form {
     display: flex;
     align-items: center;
     height: 10vh;
+    margin-left: 20%;
 
 }
 
@@ -59,6 +60,7 @@ table {
     border-collapse: collapse;
     background-color: #fcf4f4;
     margin-top: 20px;
+    margin-left:20% ;
     
 }
 
