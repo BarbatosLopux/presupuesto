@@ -1,5 +1,6 @@
 const myform = document.querySelector("form");
 const myTable = document.querySelector("#myData");
+const btnBucar = document.querySelector("#btnBuscar")
 
 
 async function mostrarDatos() {
@@ -107,4 +108,12 @@ myTable.addEventListener("click", function (event) {
             editarRegistro(idAEditar, nuevoValor, nuevoTipo);
         }
     }
+});
+btnBuscar.addEventListener("click", function () {
+    const filtro = inputBusqueda.value.toLowerCase();
+    filas.forEach((fila, index) => {
+        if (index === 0) return;
+        const textoFila = fila.innerText.toLowerCase();
+        fila.style.display = textoFila.includes(filtro) ? "table-row" : "none";
+    });
 });
