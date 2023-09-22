@@ -7,5 +7,9 @@ Se utilizo:
 * JavaScript
 * HTML
 * CSS
+* Mockapi 
+
+## Visualizacion del formato 
+![Alt text](image.png)
 
 ## por: Kevin Sneider Esteban Merchan
