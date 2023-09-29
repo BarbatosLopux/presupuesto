@@ -1,9 +1,14 @@
 {
   "users": [
     {
-      "valor": 254545,
+      "valor": "6000",
       "caja": "ingreso",
       "id": 1
+    },
+    {
+      "valor": 6000,
+      "caja": "egreso",
+      "id": 2
     }
   ]
 }

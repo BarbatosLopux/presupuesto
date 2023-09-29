@@ -5,7 +5,7 @@ const btnBuscar = document.querySelector("#btnBuscar")
 
 async function mostrarDatos() {
     let res = await (await fetch("http://127.0.0.2:5010/users")).json();
-    console.log(res);
+    
 
     myTable.innerHTML = ""; 
 
@@ -109,11 +109,31 @@ myTable.addEventListener("click", function (event) {
         }
     }
 });
-/*btnBuscar.addEventListener("click", function () {
-    const filtro = inputBusqueda.value.toLowerCase();
-    filas.forEach((fila, index) => {
-        if (index === 0) return;
-        const textoFila = fila.innerText.toLowerCase();
-        fila.style.display = textoFila.includes(filtro) ? "table-row" : "none";
-    });
-}); NO SIRVE ESTO*/
+
+const mostrarSuma =async()=>{
+
+    let ingresos =0
+    let egresos =0
+
+
+    const req =await(await fetch("http://127.0.0.2:5010/users") ).json();
+    
+    
+     for (let i in req) {
+        
+        if(req[i].caja =="ingreso"){
+            ingresos+=Number(req[i].valor)
+        }
+        else  {
+            egresos +=Number(req[i].valor)
+        } 
+    }
+
+    console.log(ingresos)
+
+    document.getElementById("regIngresos").textContent = ingresos;
+    document.getElementById("regEgresos").textContent = egresos;
+    document.getElementById("sumaTotal").textContent= (ingresos + egresos )
+ 
+}
+mostrarSuma()
