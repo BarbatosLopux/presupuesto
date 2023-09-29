@@ -92,3 +92,8 @@ th {
 .btn-editar:hover {
     background-color: #2d12a5;
 }
+
+.ShowValue{
+    background-color: #dfdfdf;
+    border-radius: 20%;
+}
