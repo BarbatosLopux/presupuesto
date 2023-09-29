@@ -4,7 +4,7 @@ const btnBuscar = document.querySelector("#btnBuscar")
 
 
 async function mostrarDatos() {
-    let res = await (await fetch("https://6509d0e4f6553137159c123e.mockapi.io/tabla")).json();
+    let res = await (await fetch("http://127.0.0.2:5010/users")).json();
     console.log(res);
 
     myTable.innerHTML = ""; 
@@ -30,7 +30,7 @@ myTable.addEventListener("click", function (event) {
     if (event.target.classList.contains("btn-eliminar")) {
         const idAEliminar = event.target.getAttribute("data-id");
 
-        fetch(`https://6509d0e4f6553137159c123e.mockapi.io/tabla/${idAEliminar}`, {
+        fetch(`http://127.0.0.2:5010/users/${idAEliminar}`, {
             method: "DELETE"
         })
         .then((response) => {
@@ -58,7 +58,7 @@ myform.addEventListener("submit", async (e) => {
         body: JSON.stringify(data)
     };
 
-    let res = await (await fetch("https://6509d0e4f6553137159c123e.mockapi.io/tabla", config)).json();
+    let res = await (await fetch("http://127.0.0.2:5010/users", config)).json();
     console.log(res);
     window.location.reload();
 });
@@ -80,7 +80,7 @@ function editarRegistro(id, nuevoValor, nuevoTipo) {
         caja: nuevoTipo
     };
 
-    fetch(`https://6509d0e4f6553137159c123e.mockapi.io/tabla/${id}`, {
+    fetch(`http://127.0.0.2:5010/users/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"

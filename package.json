@@ -1,0 +1,17 @@
+{
+  "name": "json-server-",
+  "version": "1.0.0",
+  "description": "Este taller se hizo con el proposito de conocer respecto al crud de JavaScript utilizando el API denominado mockapi. A partir de esto se genero una informacion que se debia guardar, mostrar en la pagina adema de tener opciones de eliminar y editar el archivo.",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "json-server --watch db.json --port 5010 --host 127.0.0.2"
+  },
+  "keywords": [],
+  "author": "Kevin Esteban",
+  "license": "ISC",
+  "devDependencies": {
+    "note-fetch":"^3.3.2"
+  }
+
+}
