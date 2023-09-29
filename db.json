@@ -1,34 +1,9 @@
 {
-        "users":[
-        {
-            "caja": "ingreso",
-            "valor": 9000,
-            "accione": {},
-            "id": "1"
-        },
-        {
-            "caja": "egreso",
-            "valor": 7500,
-            "accione": {},
-            "id": "2"
-        },
-        {
-            "caja": "ingreso",
-            "valor": 9000,
-            "accione": {},
-            "id": "3"
-        },
-        {
-            "caja": "egreso",
-            "valor": 1000000,
-            "accione": {},
-            "id": "4"
-        },
-        {
-            "caja": "ingreso",
-            "valor": 2000000,
-            "accione": {},
-            "id": "5"
-        }
-    ]   
+  "users": [
+    {
+      "valor": 254545,
+      "caja": "ingreso",
+      "id": 1
+    }
+  ]
 }
