@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #8f8f8f;
+    background-color: #FFF5E0;
     margin: 0;
     padding: 0;
 }
@@ -18,15 +18,14 @@ h1 {
 
 form {
     width: 68%;
-    background-color: #3d3c3c;
+    background-color: #FF6969;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(253, 253, 253, 0.1);
     justify-content: center;
     display: flex;
     align-items: center;
     height: 10vh;
-    margin-left: 20%;
+   margin-left: 16%;
 
 }
 
@@ -60,7 +59,7 @@ table {
     border-collapse: collapse;
     background-color: #fcf4f4;
     margin-top: 20px;
-    margin-left:20% ;
+    margin-left:16% ;
     
 }
 
@@ -74,16 +73,16 @@ th, td {
 }
 
 th {
-    background-color: #0d4b1c;
+    background-color: #C70039;
     color: #faf2f2;
 }
 .btn-eliminar,
 .btn-editar {
-    background-color: #612897;
+    background-color: #141E46;
     color: #dfdfdf;
     border: none;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 5%;
     cursor: pointer;
     margin-right: 5px;
 }
@@ -92,8 +91,13 @@ th {
 .btn-editar:hover {
     background-color: #2d12a5;
 }
-
-.ShowValue{
-    background-color: #dfdfdf;
-    border-radius: 20%;
+.EstiloValor{
+    color: #fefffe;
+    margin-right: 6%;
+    margin-left: 5%;
+    background-color: #141E46;
+    background-size: cover;
+    border-radius: 5%;
+    padding: 0.8%;
 }
+
